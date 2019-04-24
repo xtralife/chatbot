@@ -1,2 +1,2 @@
 # chatbot
-Chatbot Application
+Chatbot application
