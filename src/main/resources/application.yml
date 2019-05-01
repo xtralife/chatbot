@@ -9,3 +9,10 @@ server:
     key-store: classpath:keystore/xtralife.p12
     key-store-password: ${CHATBOT_HTTPS_KEY_STORE_PASSWORD}
     key-alias: xtralife
+
+chatbot:
+  watson:
+    endpoint: ${CHATBOT_WATSON_ENDPOINT}
+    apiKey: ${CHATBOT_WATSON_API_KEY}
+    workspaceId: ${CHATBOT_WATSON_WORKSPACE_ID}
+    version: ${CHATBOT_WATSON_VERSION}
