@@ -7,5 +7,5 @@ server:
   ssl:
     key-store-type: PKCS12
     key-store: classpath:keystore/xtralife.p12
-    key-store-password: ${KEY_STORE_PASSWORD}
+    key-store-password: ${CHATBOT_HTTPS_KEY_STORE_PASSWORD}
     key-alias: xtralife
