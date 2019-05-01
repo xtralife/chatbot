@@ -85,6 +85,12 @@
           </exclusion>
         </exclusions>
       </dependency>
+
+      <dependency>
+        <groupId>com.ibm.watson</groupId>
+        <artifactId>assistant</artifactId>
+        <version>7.0.0</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -97,6 +103,11 @@
     <dependency>
       <groupId>org.telegram</groupId>
       <artifactId>telegrambots</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.ibm.watson</groupId>
+      <artifactId>assistant</artifactId>
     </dependency>
 
     <!--Tests-->

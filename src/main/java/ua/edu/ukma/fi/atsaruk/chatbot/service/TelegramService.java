@@ -15,12 +15,11 @@ public class TelegramService {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TelegramService.class);
 
-  public void sendMessage(String token, long chatId, int messageId, String text) {
+  public void sendMessage(String token, long chatId, String text) {
     RestTemplate restTemplate = new RestTemplate();
 
     SendMessage message = new SendMessage();
     message.setChatId(chatId);
-    message.setReplyToMessageId(messageId);
     message.setText(text);
 
     ResponseEntity<String> response = restTemplate.postForEntity(
