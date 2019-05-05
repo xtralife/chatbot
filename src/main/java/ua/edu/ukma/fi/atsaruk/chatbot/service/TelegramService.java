@@ -26,8 +26,8 @@ public class TelegramService {
         format("https://api.telegram.org/bot%s/sendMessage", token), message, String.class);
 
     if (response.getStatusCode() == HttpStatus.OK) {
-      String resp = response.getBody();
-      LOGGER.debug("Response -> {}", resp);
+      String responseBody = response.getBody();
+      LOGGER.debug("Response -> {}", responseBody);
     } else {
       LOGGER.error("Something wrong");
     }
