@@ -11,8 +11,13 @@ server:
     key-alias: xtralife
 
 chatbot:
+  defaultMessageSender: watson
   watson:
     endpoint: ${CHATBOT_WATSON_ENDPOINT}
     apiKey: ${CHATBOT_WATSON_API_KEY}
     workspaceId: ${CHATBOT_WATSON_WORKSPACE_ID}
     version: ${CHATBOT_WATSON_VERSION}
+  azure:
+    qnaServiceName: ${CHATBOT_AZURE_QNA_SERVICE_NAME}
+    knowledgeBaseId: ${CHATBOT_AZURE_KNOWLEDGE_BASE_ID}
+    endpointKey: ${CHATBOT_AZURE_ENDPOINT_KEY}

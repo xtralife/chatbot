@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class WatsonService {
+public class WatsonService implements MessageSender {
 
   private final Assistant assistant;
   private final String workspaceId;
@@ -37,6 +37,7 @@ public class WatsonService {
     this.contextCache = contextCache;
   }
 
+  @Override
   public String sendMessage(long chatId, String message) {
     final Context context;
     if (contextCache.containsKey(chatId)) {
