@@ -42,7 +42,7 @@ public class MessageSenderProvider implements Provider<MessageSender> {
   }
 
   public void registerMessageSender(String name, MessageSender sender) {
-    LOGGER.debug("Registering message sender {}", name);
+    LOGGER.debug("Registering message sender '{}'", name);
     messageSenders.put(name, sender);
   }
 
