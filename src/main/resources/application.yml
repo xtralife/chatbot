@@ -1,0 +1,23 @@
+logging:
+  level:
+    ua.edu.ukma.fi.atsaruk.chatbot: debug
+
+server:
+  port: 8443
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore/xtralife.p12
+    key-store-password: ${CHATBOT_HTTPS_KEY_STORE_PASSWORD}
+    key-alias: xtralife
+
+chatbot:
+  defaultMessageSender: azure
+  watson:
+    endpoint: ${CHATBOT_WATSON_ENDPOINT}
+    apiKey: ${CHATBOT_WATSON_API_KEY}
+    workspaceId: ${CHATBOT_WATSON_WORKSPACE_ID}
+    version: ${CHATBOT_WATSON_VERSION}
+  azure:
+    qnaServiceName: ${CHATBOT_AZURE_QNA_SERVICE_NAME}
+    knowledgeBaseId: ${CHATBOT_AZURE_KNOWLEDGE_BASE_ID}
+    endpointKey: ${CHATBOT_AZURE_ENDPOINT_KEY}
