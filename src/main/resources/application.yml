@@ -11,7 +11,7 @@ server:
     key-alias: xtralife
 
 chatbot:
-  defaultMessageSender: watson
+  defaultMessageSender: azure
   watson:
     endpoint: ${CHATBOT_WATSON_ENDPOINT}
     apiKey: ${CHATBOT_WATSON_API_KEY}
