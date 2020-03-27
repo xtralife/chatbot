@@ -1,6 +1,6 @@
 package ua.edu.ukma.fi.atsaruk.chatbot.service;
 
-import com.ibm.cloud.sdk.core.service.security.IamOptions;
+import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import com.ibm.watson.assistant.v1.Assistant;
 import com.ibm.watson.assistant.v1.model.Context;
 import com.ibm.watson.assistant.v1.model.MessageInput;
@@ -25,13 +25,9 @@ public class WatsonService implements MessageSender {
       @Value("${chatbot.watson.workspaceId}") final String workspaceId,
       final Map<Long, Context> contextCache) {
 
-    IamOptions options = new IamOptions.Builder()
-        .apiKey(apiKey)
-        .build();
-
-    this.assistant = new Assistant(version, options);
-    this.assistant.setEndPoint(endpoint);
-    this.assistant.setApiKey(apiKey);
+    IamAuthenticator authenticator = new IamAuthenticator(apiKey);
+    this.assistant = new Assistant(version, authenticator);
+    this.assistant.setServiceUrl(endpoint);
 
     this.workspaceId = workspaceId;
     this.contextCache = contextCache;
