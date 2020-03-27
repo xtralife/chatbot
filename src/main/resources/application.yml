@@ -11,12 +11,14 @@ server:
     key-alias: xtralife
 
 chatbot:
-  defaultMessageSender: azure
+  defaultMessageSender: watson
   watson:
     endpoint: ${CHATBOT_WATSON_ENDPOINT}
     apiKey: ${CHATBOT_WATSON_API_KEY}
     workspaceId: ${CHATBOT_WATSON_WORKSPACE_ID}
-    version: ${CHATBOT_WATSON_VERSION}
+    #//TODO Consider removing env variable
+    version: 2020-02-05
+    #version: ${CHATBOT_WATSON_VERSION}
   azure:
     qnaServiceName: ${CHATBOT_AZURE_QNA_SERVICE_NAME}
     knowledgeBaseId: ${CHATBOT_AZURE_KNOWLEDGE_BASE_ID}
