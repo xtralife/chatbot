@@ -35,6 +35,7 @@
     <java.version>1.8</java.version>
     <telegram.bots.version>4.6</telegram.bots.version>
     <ibm.watson.version>8.3.1</ibm.watson.version>
+    <aws.sdk.version>2.11.3</aws.sdk.version>
   </properties>
 
   <dependencyManagement>
@@ -92,6 +93,11 @@
         <artifactId>assistant</artifactId>
         <version>${ibm.watson.version}</version>
       </dependency>
+      <dependency>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>dynamodb</artifactId>
+        <version>${aws.sdk.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -100,15 +106,17 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.telegram</groupId>
       <artifactId>telegrambots</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.ibm.watson</groupId>
       <artifactId>assistant</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>dynamodb</artifactId>
     </dependency>
 
     <!--Tests-->

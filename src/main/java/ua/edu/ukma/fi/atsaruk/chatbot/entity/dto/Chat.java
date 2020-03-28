@@ -108,4 +108,19 @@ public class Chat {
   public void setInviteLink(String inviteLink) {
     this.inviteLink = inviteLink;
   }
+
+  @Override
+  public String toString() {
+    return "Chat{" +
+        "id=" + id +
+        ", source='" + source + '\'' +
+        ", type='" + type + '\'' +
+        ", title='" + title + '\'' +
+        ", username='" + username + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", description='" + description + '\'' +
+        ", inviteLink='" + inviteLink + '\'' +
+        '}';
+  }
 }

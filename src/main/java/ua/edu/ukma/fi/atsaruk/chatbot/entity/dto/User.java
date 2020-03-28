@@ -76,4 +76,17 @@ public class User {
   public void setLanguageCode(String languageCode) {
     this.languageCode = languageCode;
   }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "id=" + id +
+        ", source='" + source + '\'' +
+        ", username='" + username + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", isBot=" + isBot +
+        ", languageCode='" + languageCode + '\'' +
+        '}';
+  }
 }

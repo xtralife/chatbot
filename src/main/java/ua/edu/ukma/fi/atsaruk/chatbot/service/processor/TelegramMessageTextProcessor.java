@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import ua.edu.ukma.fi.atsaruk.chatbot.service.MessageSenderProvider;
 import ua.edu.ukma.fi.atsaruk.chatbot.service.TelegramService;
-import ua.edu.ukma.fi.atsaruk.chatbot.service.dataservice.TelegramChatService;
-import ua.edu.ukma.fi.atsaruk.chatbot.service.dataservice.TelegramUserService;
 
 import java.util.List;
 
