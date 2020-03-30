@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import ua.edu.ukma.fi.atsaruk.chatbot.exception.ChatbotException;
 import ua.edu.ukma.fi.atsaruk.chatbot.service.processor.TelegramMessageProcessor;
-
-import static java.lang.String.format;
 
 /**
  * Handles {@link org.telegram.telegrambots.meta.api.objects.Update} objects
@@ -30,7 +27,7 @@ public class TelegramUpdateHandler {
 
     logUpdateContent(update);
 
-    throw new ChatbotException(format("Update content is not supported yet. Payload: %s", update));
+    LOGGER.error("Update content is not supported yet. Payload: {}", update);
   }
 
   private void logUpdateContent(Update update) {

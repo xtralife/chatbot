@@ -14,8 +14,9 @@ chatbot:
   defaultMessageSender: watson
   watson:
     endpoint: https://gateway-lon.watsonplatform.net/assistant/api
-    workspaceId: 53eb2d6c-ddec-4b5c-94d9-8a092dae529b
-    apiKey: ${CHATBOT_WATSON_API_KEY}
+    assistant-id: e2133832-1bcf-4262-b10c-412a4bddf151
+    credentials-name: auto-generated-apikey-cc0fdcec-0801-4bbc-91af-78120649bb5f
+    api-key: ${CHATBOT_WATSON_API_KEY}
     version: 2020-02-05
   azure:
     qnaServiceName: qnafortelegram
