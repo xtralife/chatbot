@@ -11,7 +11,7 @@ server:
     key-alias: xtralife
 
 chatbot:
-  defaultMessageSender: watson
+  defaultMessageSender: dialogflow
   watson:
     endpoint: https://gateway-lon.watsonplatform.net/assistant/api
     assistant-id: e2133832-1bcf-4262-b10c-412a4bddf151
@@ -22,6 +22,9 @@ chatbot:
     qnaServiceName: qnafortelegram
     knowledgeBaseId: 48b7c073-5aa9-4fac-b94d-a2c35f74efc0
     endpointKey: ${CHATBOT_AZURE_ENDPOINT_KEY}
+  dialogflow:
+    project-id: vstup-homqla
+    language: uk
 
 aws:
   user: dynamo-db-user

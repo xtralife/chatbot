@@ -36,6 +36,7 @@
     <telegram.bots.version>4.6</telegram.bots.version>
     <ibm.watson.version>8.3.1</ibm.watson.version>
     <aws.sdk.version>2.11.3</aws.sdk.version>
+    <google.cloud.version>4.4.1</google.cloud.version>
   </properties>
 
   <dependencyManagement>
@@ -94,6 +95,13 @@
         <version>${ibm.watson.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>${google.cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
         <version>${aws.sdk.version}</version>
@@ -113,6 +121,10 @@
     <dependency>
       <groupId>com.ibm.watson</groupId>
       <artifactId>assistant</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-dialogflow</artifactId>
     </dependency>
     <dependency>
       <groupId>software.amazon.awssdk</groupId>
