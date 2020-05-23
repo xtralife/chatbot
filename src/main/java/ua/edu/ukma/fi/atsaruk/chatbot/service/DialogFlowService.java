@@ -3,7 +3,6 @@ package ua.edu.ukma.fi.atsaruk.chatbot.service;
 import com.google.cloud.dialogflow.v2.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import software.amazon.awssdk.services.dynamodb.model.QueryResponse;
 
 import java.io.IOException;
 
