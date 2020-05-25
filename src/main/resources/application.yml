@@ -25,6 +25,8 @@ chatbot:
   dialogflow:
     project-id: vstup-homqla
     language: uk
+    contexts:
+      parameters: faculty, speciality
 
 aws:
   user: dynamo-db-user
@@ -33,3 +35,4 @@ aws:
     tables:
       users: chatbot-users
       chats: chatbot-chats
+      contexts: chatbot-contexts

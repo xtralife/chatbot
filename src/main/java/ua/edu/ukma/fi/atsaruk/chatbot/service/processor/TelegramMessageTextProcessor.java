@@ -10,6 +10,7 @@ import ua.edu.ukma.fi.atsaruk.chatbot.service.TelegramService;
 import java.util.List;
 
 import static java.lang.String.format;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
 public class TelegramMessageTextProcessor {
@@ -38,7 +39,11 @@ public class TelegramMessageTextProcessor {
     }
 
     final String reply = provider.get().sendMessage(chatId, text);
-    telegramService.sendMessage(token, chatId, reply);
+    if (isNotBlank(reply)) {
+      telegramService.sendMessage(token, chatId, reply);
+    } else {
+      LOGGER.debug("Empty message received from the provider. Nothing to send to telegram");
+    }
   }
 
   private boolean isCommand(String text) {

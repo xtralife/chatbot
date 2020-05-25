@@ -36,7 +36,7 @@
     <telegram.bots.version>4.6</telegram.bots.version>
     <ibm.watson.version>8.3.1</ibm.watson.version>
     <aws.sdk.version>2.11.3</aws.sdk.version>
-    <google.cloud.version>4.4.1</google.cloud.version>
+    <google.cloud.version>5.4.0</google.cloud.version>
   </properties>
 
   <dependencyManagement>
