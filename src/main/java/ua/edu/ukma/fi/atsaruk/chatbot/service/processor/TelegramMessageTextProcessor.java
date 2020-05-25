@@ -1,16 +1,20 @@
-package ua.edu.ukma.fi.atsaruk.chatbot.service;
+package ua.edu.ukma.fi.atsaruk.chatbot.service.processor;
 
-import static java.lang.String.format;
-
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.telegram.telegrambots.meta.api.objects.Message;
+import ua.edu.ukma.fi.atsaruk.chatbot.service.MessageSenderProvider;
+import ua.edu.ukma.fi.atsaruk.chatbot.service.TelegramService;
+
+import java.util.List;
+
+import static java.lang.String.format;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
-public class TelegramMessageProcessor {
-
-  private static final Logger LOGGER = LoggerFactory.getLogger(TelegramMessageProcessor.class);
+public class TelegramMessageTextProcessor {
+  private static final Logger LOGGER = LoggerFactory.getLogger(TelegramMessageTextProcessor.class);
 
   private static final String LIST_SERVICES = "/list_services";
   private static final String SET_SERVICE = "/set_service";
@@ -19,22 +23,27 @@ public class TelegramMessageProcessor {
 
   private final MessageSenderProvider provider;
 
-
-  public TelegramMessageProcessor(
-      TelegramService telegramService,
-      MessageSenderProvider provider) {
+  public TelegramMessageTextProcessor(TelegramService telegramService,
+                                      MessageSenderProvider provider) {
     this.telegramService = telegramService;
     this.provider = provider;
   }
 
-  public void processMessage(final String token, final long chatId, final String text) {
+  public void process(Message message, String token) {
+    Long chatId = message.getChatId();
+    String text = message.getText();
+
     if (isCommand(text)) {
       doCommand(token, chatId, text);
       return;
     }
 
     final String reply = provider.get().sendMessage(chatId, text);
-    telegramService.sendMessage(token, chatId, reply);
+    if (isNotBlank(reply)) {
+      telegramService.sendMessage(token, chatId, reply);
+    } else {
+      LOGGER.debug("Empty message received from the provider. Nothing to send to telegram");
+    }
   }
 
   private boolean isCommand(String text) {

@@ -11,15 +11,28 @@ server:
     key-alias: xtralife
 
 chatbot:
-  defaultMessageSender: watson
+  defaultMessageSender: dialogflow
   watson:
-    endpoint: ${CHATBOT_WATSON_ENDPOINT}
-    apiKey: ${CHATBOT_WATSON_API_KEY}
-    workspaceId: ${CHATBOT_WATSON_WORKSPACE_ID}
-    #//TODO Consider removing env variable
+    endpoint: https://gateway-lon.watsonplatform.net/assistant/api
+    assistant-id: e2133832-1bcf-4262-b10c-412a4bddf151
+    credentials-name: auto-generated-apikey-cc0fdcec-0801-4bbc-91af-78120649bb5f
+    api-key: ${CHATBOT_WATSON_API_KEY}
     version: 2020-02-05
-    #version: ${CHATBOT_WATSON_VERSION}
   azure:
-    qnaServiceName: ${CHATBOT_AZURE_QNA_SERVICE_NAME}
-    knowledgeBaseId: ${CHATBOT_AZURE_KNOWLEDGE_BASE_ID}
+    qnaServiceName: qnafortelegram
+    knowledgeBaseId: 48b7c073-5aa9-4fac-b94d-a2c35f74efc0
     endpointKey: ${CHATBOT_AZURE_ENDPOINT_KEY}
+  dialogflow:
+    project-id: vstup-homqla
+    language: uk
+    contexts:
+      parameters: faculty, speciality
+
+aws:
+  user: dynamo-db-user
+  region: eu-west-2
+  dynamo-db:
+    tables:
+      users: chatbot-users
+      chats: chatbot-chats
+      contexts: chatbot-contexts

@@ -8,9 +8,11 @@ import ua.edu.ukma.fi.atsaruk.chatbot.service.MessageSenderProvider;
 public class ChatbotConfiguration {
 
   public ChatbotConfiguration(MessageSenderProvider messageSenderProvider,
-      MessageSender watsonService,
-      MessageSender azureQnAService) {
+                              MessageSender watsonService,
+                              MessageSender azureQnAService,
+                              MessageSender dialogFlowService) {
     messageSenderProvider.registerMessageSender("watson", watsonService);
     messageSenderProvider.registerMessageSender("azure", azureQnAService);
+    messageSenderProvider.registerMessageSender("dialogflow", dialogFlowService);
   }
 }
